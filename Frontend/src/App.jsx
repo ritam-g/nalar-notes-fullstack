@@ -8,7 +8,7 @@ function App() {
 
   // GET notes
   async function getData() {
-    const res = await axios.get("http://localhost:3000/api/note");
+    const res = await axios.get("https://nalar-notes-fullstack.onrender.com/api/note");
     setNotes(res.data.notes);
   }
 
@@ -23,7 +23,7 @@ function App() {
     const title = e.target.title.value;
     const content = e.target.content.value;
 
-    await axios.post("http://localhost:3000/api/note", {
+    await axios.post("https://nalar-notes-fullstack.onrender.com/api/note", {
       title,
       content,
     });
@@ -39,7 +39,7 @@ function App() {
     const title = e.target.title.value;
     const content = e.target.content.value;
 
-    await axios.patch(`http://localhost:3000/api/note/${id}`, {
+    await axios.patch(`https://nalar-notes-fullstack.onrender.com/api/note/${id}`, {
       title,
       content,
     });
@@ -50,7 +50,7 @@ function App() {
 
   // DELETE note
   async function deleteNote(id) {
-    await axios.delete(`http://localhost:3000/api/note/${id}`);
+    await axios.delete(`https://nalar-notes-fullstack.onrender.com/api/note/${id}`);
     getData();
   }
 
